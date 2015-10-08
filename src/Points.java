@@ -47,6 +47,7 @@ public class Points {
         for (int i = 0; i < ints.length; i++) {
             double radius = Double.MAX_VALUE;
             int countOfNeighbours = 0;
+            // Рассчитываем радиус
             for (int j = 0; j < ints.length; j++) {
                 double currentRadius;
                 if (i == j) {
@@ -58,6 +59,8 @@ public class Points {
                     }
                 }
             }
+
+            // Поиск количества соседей
             for (int j = 0; j < ints.length; j++) {
                 if (i == j) {
                     continue;
@@ -73,12 +76,12 @@ public class Points {
 
 
     /**
-     * Calculate the distance between two points of array
+     * Рассчитывает расстояние между двумя точками массива     *
      *
-     * @param ints array[][]
-     * @param i first point number in array
-     * @param j second point number in array
-     * @return distance from one to another
+     * @param ints массив[][]
+     * @param i индекс первой точки
+     * @param j индекс второй точки
+     * @return расстояние
      */
     private static double getDistance(int[][] ints, int i, int j) {
         return Math.sqrt(Math.pow(ints[i][0] - ints[j][0], 2) + Math.pow(ints[i][1] - ints[j][1], 2));
